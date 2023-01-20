@@ -71,7 +71,7 @@ function setupHandlers(app, messageChannel) {
 
       fs.createReadStream(videoPath).pipe(res);
 
-      sendViewedMessage(messageChannel, videoPath, "viewd" + req.query.id); // Send message to "history" microservice that this video has been "viewed".
+      sendViewedMessage(messageChannel, videoPath, req.query.id); // Send message to "history" microservice that this video has been "viewed".
     });
   });
 }
