@@ -65,7 +65,7 @@ function setupHandlers(app, db, messageChannel) {
     console.log("viewed: ", parsedMsg.videoId);
 
     return videosCollection
-      .insertOne({ videoPath: parsedMsg.videoPath }) // Record the "view" in the database.
+      .insertOne({ videoPath: parsedMsg.videoPath, videoId: parsedMsg.videoId }) // Record the "view" in the database.
       .then(() => {
         console.log("Acknowledging message was handled.");
 
